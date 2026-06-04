@@ -1,0 +1,314 @@
+cat > index.php << 'ENDOFFILE'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HACKED BY D-face</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: #00ff41;
+            font-family: 'Share Tech Mono', monospace;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Matrix rain canvas */
+        #matrix {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.15;
+        }
+
+        .glitch-container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 2rem;
+            max-width: 900px;
+            width: 90%;
+        }
+
+        .ascii-art {
+            color: #00ff41;
+            font-size: 10px;
+            line-height: 1.1;
+            white-space: pre;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 10px #00ff41;
+        }
+
+        @media (max-width: 768px) {
+            .ascii-art { font-size: 5px; }
+        }
+        @media (max-width: 480px) {
+            .ascii-art { font-size: 3px; }
+        }
+
+        .glitch-text {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #00ff41;
+            text-shadow: 
+                2px 0 #ff0040, -2px 0 #0040ff,
+                0 0 20px #00ff41, 0 0 40px #00ff41, 0 0 60px #00ff41;
+            animation: glitch 1.5s infinite;
+            margin-bottom: 0.5rem;
+        }
+
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-3px, 2px); }
+            40% { transform: translate(3px, -2px); }
+            60% { transform: translate(-1px, -1px); }
+            80% { transform: translate(1px, 1px); }
+        }
+
+        .sub-text {
+            font-size: 1.8rem;
+            color: #00cc33;
+            text-shadow: 0 0 15px #00ff41;
+            margin-bottom: 2rem;
+            animation: blink 2s step-end infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .banner {
+            border: 2px solid #00ff41;
+            border-radius: 4px;
+            padding: 1.5rem 2rem;
+            background: rgba(0, 255, 65, 0.05);
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.1), inset 0 0 30px rgba(0, 255, 65, 0.05);
+            margin: 1.5rem 0;
+        }
+
+        .banner h2 {
+            font-size: 2rem;
+            color: #ff0040;
+            text-shadow: 0 0 20px #ff0040;
+            margin-bottom: 0.75rem;
+        }
+
+        .banner p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #00ff41;
+        }
+
+        .highlight {
+            color: #ff0040;
+            text-shadow: 0 0 10px #ff0040;
+        }
+
+        .green-highlight {
+            color: #00ff41;
+            text-shadow: 0 0 10px #00ff41;
+        }
+
+        .group-tag {
+            color: #ffff00;
+            text-shadow: 0 0 15px #ffff00;
+            font-size: 1.4rem;
+        }
+
+        .footer-line {
+            margin-top: 2rem;
+            font-size: 1rem;
+            color: #006622;
+            border-top: 1px solid #003300;
+            padding-top: 1.5rem;
+            width: 80%;
+        }
+
+        .terminal-line {
+            text-align: left;
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+            color: #009926;
+        }
+
+        .terminal-line span {
+            color: #00ff41;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 1.2rem;
+            background: #00ff41;
+            animation: cursorBlink 0.8s step-end infinite;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+
+        @keyframes cursorBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Scanning line effect */
+        .scan-line {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: rgba(0, 255, 65, 0.15);
+            z-index: 2;
+            pointer-events: none;
+            animation: scan 4s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { top: 0; }
+            100% { top: 100%; }
+        }
+
+        /* Badge / seal */
+        .seal {
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            border: 1px solid #003300;
+            padding: 0.5rem 1rem;
+            display: inline-block;
+            color: #005500;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Matrix Rain Canvas -->
+    <canvas id="matrix"></canvas>
+    
+    <!-- Scanning line -->
+    <div class="scan-line"></div>
+
+    <div class="glitch-container">
+
+
+        <!-- Glitch header -->
+        <div class="glitch-text">[ HACKED BY D-face ]</div>
+
+        <div class="sub-text">◆ ◆ ◆ CELEBRATION MODE ◆ ◆ ◆</div>
+
+        <!-- Main Birthday Banner -->
+        <div class="banner">
+            <h2>🎂 HAPPY BIRTHDAY PIYUSH 🎂</h2>
+            <p>
+                <span class="highlight">pythagorexx</span> ∩ <span class="group-tag">Gurkha Sec</span>
+            </p>
+            <p style="margin-top:1rem; font-size:1.4rem;">
+                This site has been <span class="highlight">temporarily owned</span> to celebrate.<br>
+                <span class="green-highlight">Normal service resumes tomorrow.</span> 🤘
+            </p>
+            <p style="margin-top:1.2rem; font-size:1.1rem; color:#00cc33;">
+                "Another trip around the sun, another firewall breached.<br>
+                Happy birthday, legend. Keep breaking limits."
+            </p>
+        </div>
+
+        <!-- Terminal simulation -->
+        <div style="text-align:left; width:100%; margin-top:1rem;">
+            <div class="terminal-line">
+                root@dface:~# <span>whoami</span>
+            </div>
+            <div class="terminal-line" style="color:#00ff41;">
+                ▸ dface — penetration tester / security researcher
+            </div>
+            <div class="terminal-line">
+                root@dface:~# <span>target --name piyush --group "pythagorexx || gurkha sec"</span>
+            </div>
+            <div class="terminal-line" style="color:#00ff41;">
+                ▸ Target located. Commencing birthday operation.
+            </div>
+            <div class="terminal-line">
+                root@dface:~# <span>deface --mode celebration --payload "happiness+success"</span>
+            </div>
+            <div class="terminal-line" style="color:#00ff41;">
+                ▸ Payload delivered. System owned. Have a great one, Piyush! <span class="cursor"></span>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-line">
+            [ HACKED BY D-face ] — Authorized Penetration Test — All actions logged and approved
+        </div>
+
+        <div class="seal">
+            [ ROOT ACCESS GRANTED ] :: [ BIRTHDAY PROTOCOL ACTIVE ]
+        </div>
+
+    </div>
+
+    <script>
+        // ——— Matrix Rain Effect ———
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEF<>/\\|{}[]()!@#$%^&*';
+        const fontSize = 14;
+        const columns = Math.floor(canvas.width / fontSize);
+        const drops = Array.from({ length: columns }, () => Math.floor(Math.random() * canvas.height / fontSize));
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(10, 10, 10, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#00ff41';
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = chars[Math.floor(Math.random() * chars.length)];
+                const x = i * fontSize;
+                const y = drops[i] * fontSize;
+
+                // Random bright green / dim green
+                if (Math.random() > 0.98) {
+                    ctx.fillStyle = '#00ff41';
+                } else {
+                    ctx.fillStyle = '#005500';
+                }
+
+                ctx.fillText(text, x, y);
+
+                if (y > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(drawMatrix, 50);
+    </script>
+
+</body>
+</html>
+ENDOFFILE
